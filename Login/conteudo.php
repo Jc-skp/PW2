@@ -24,7 +24,7 @@
             <h1 class="titulo"> <?= $titulo ?> </h1>
         </div>
         <section>
-            <textarea name="" id="" cols="25" rows="15"class="areatexto"> <?= $conteudo ?> </textarea>
+            <textarea name="" id="" cols="20" rows="10"class="areatexto"> <?= $conteudo ?> </textarea>
             <p class="direita"> <?= $autor ?> </p>
         </section>
 
