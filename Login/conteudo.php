@@ -10,6 +10,13 @@
 <body>
     <main>
         <?php
+            require_once 'config.php';
+            require_once 'class/get.php';
+            require_once 'class/session.php';
+            
+            $session = new Session();
+            $get = new Get();
+
             $titulo = $_POST['title'];
             $conteudo = $_POST['content'];
             $autor = $_POST['author'];
@@ -18,9 +25,12 @@
             } else {
                 
         ?>
-
+        <p class="center"><img src="<?=$info['img']?>"></p>
+        <p>Nome: <?= $info['name'] ?> </p>
+        <p>E-mail: <?= $info['email'] ?> </p>
+        <p>CPF: <?= $info['cpf'] ?> </p>
+        <hr>
         <div class="areatitulo">
-            <img src="./imagem.webp" width="100%">
             <h1 class="titulo"> <?= $titulo ?> </h1>
         </div>
         <section>

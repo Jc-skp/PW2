@@ -9,13 +9,25 @@
 </head>
 <body>
     <?php
-         if ($_POST == []) {
+        require_once 'users.php';
+        require_once 'class/get.php';
+        require_once 'class/session.php';
+        
+        $session = new Session();
+        $get = new Get();
+        
+         //if ( ) {
             echo "<h1>Faça login para poder acessar essa página.</h1>";
-        } else {
+        //} else {
     ?>
     
     <section>
-        <form method="post" action="conteudo.php">
+        <p class="center"><img src="<?=$info['img']?>"></p>
+        <p>Nome: <?= $info['name'] ?> </p>
+        <p>E-mail: <?= $info['email'] ?> </p>
+        <p>CPF: <?= $info['cpf'] ?> </p>
+        <hr>
+        <form method="get" action="conteudo.php">
             <label>Título:</label>
             <input type="text" name="title" placeholder="Digite um título"><br>
             
@@ -29,6 +41,6 @@
         </form>
     </section>
     
-    <?php } ?>
+    <?php //} ?>
 </body>
 </html>
