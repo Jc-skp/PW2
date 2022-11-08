@@ -15,31 +15,45 @@
             require_once 'class/session.php';
             
             $session = new Session();
-            
             $post = new Post();
 
-            $titulo = $_POST['title'];
-            $conteudo = $_POST['content'];
-            $autor = $_POST['author'];
-            if ($titulo == '' || $conteudo == '' || $autor == '') {
-                echo "<p>Preencha todos os campos!</p>";
+            $title = $_POST['title'];
+            $content = $_POST['content'];
+            $author = $_POST['author'];
+
+            if ($session->get('email') != '') {
+                foreach ($_users as $user => $data) {
+                    if ($session->get('email') == $data['email'] && $session->get('pass') == $data['pass']) {
+       
+
+            if ($title == '' || $content == '' || $author == '') {
+                echo "<h1>Preencha todos os campos! </h1>";
+                echo "<a href='formulario.php'>Voltar</a>";
             } else {
                 
         ?>
+        <section>
         <p class="center"><img src="<?=$data['img']?>"></p>
         <p>Nome: <?= $data['name'] ?> </p>
         <p>E-mail: <?= $data['email'] ?> </p>
         <p>CPF: <?= $data['cpf'] ?> </p>
         <hr>
-        <div class="areatitulo">
-            <h1 class="titulo"> <?= $titulo ?> </h1>
+        </section>
+        
+        <div class="areatitle">
+            <h1 class="title"> <?= $title ?> </h1>
         </div>
+
         <section>
-            <textarea name="" id="" cols="20" rows="10"class="areatexto"> <?= $conteudo ?> </textarea>
-            <p class="direita"> <?= $autor ?> </p>
+            <textarea name="" id="" cols="20" rows="10"class="areatexto"> <?= $content ?> </textarea>
+            <p class="direita"> <?= $author ?> </p>
         </section>
 
-        <?php } ?>
+        <?php 
+    
+            break;
+        }    
+            }}} ?>
     </main>
 </body>
 </html>
