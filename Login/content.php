@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Perfil-content</title>
 </head>
 <body>
     <main>
         <?php
-            require_once 'config.php';
-            require_once 'class/get.php';
+            require_once 'users.php';
+            require_once 'class/post.php';
             require_once 'class/session.php';
             
             $session = new Session();
-            $get = new Get();
+            
+            $post = new Post();
 
             $titulo = $_POST['title'];
             $conteudo = $_POST['content'];
@@ -25,10 +26,10 @@
             } else {
                 
         ?>
-        <p class="center"><img src="<?=$info['img']?>"></p>
-        <p>Nome: <?= $info['name'] ?> </p>
-        <p>E-mail: <?= $info['email'] ?> </p>
-        <p>CPF: <?= $info['cpf'] ?> </p>
+        <p class="center"><img src="<?=$data['img']?>"></p>
+        <p>Nome: <?= $data['name'] ?> </p>
+        <p>E-mail: <?= $data['email'] ?> </p>
+        <p>CPF: <?= $data['cpf'] ?> </p>
         <hr>
         <div class="areatitulo">
             <h1 class="titulo"> <?= $titulo ?> </h1>

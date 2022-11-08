@@ -1,6 +1,6 @@
 <?php
 
-$_user = [
+$_users = [
     'user1' => [
         'email' => 'seupai@kalvao.com',
         'pass' => 'ins4n0',
