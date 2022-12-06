@@ -9,9 +9,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
       * {
         padding: 0;
         margin: 0;
@@ -205,6 +202,53 @@
     </style>
   </head>
   <body>
+  <?php
+    require_once './app/Controllers/getController.php';
+    
+    $get = new Get();
+    $age = $_GET['age'];
+    
+    $merc = 4.2;
+    $ven = 1.6 ;
+    $mar = 0.53;
+    $jup = 11.86;
+    $sat = 29.46;
+    $ura = 84.01;
+    $net = 164.79;
+
+    $ageMerc= $merc * $age;
+    $ageVen=  $ven * $age;
+    $ageMar=  $mar * $age;
+    $ageJup= $jup / $age;
+    $ageSat= $sat / $age;
+    $ageUra= $ura / $age;
+    $ageNet= $net / $age;
+
+    if ($age == '') {
+      echo "<h1>Preencha sua idade! </h1>";
+      echo "<a href='../views/index.html'>Voltar</a>";
+  } else {
+      
+?>
+<section>
+<h1>Essas são as idades que você teria em cada planeta do Sistema Solar</h1>
+<p>Mercúrio: <?= $age['age'] ?> </p>
+<p>Vênus: <?= $age['age'] ?> </p>
+<p>Terra: <?= $age['age'] ?> </p>
+<p>Marte: <?= $age['age'] ?> </p>
+<p>Júpiter: <?= $age['age'] ?> </p>
+<p>Saturno: <?= $age['age'] ?> </p>
+<p>Urano: <?= $age['age'] ?> </p>
+<p>Netuno: <?= $age['age'] ?> </p>
+
+<hr>
+
+
+<?php 
+
+  break;
+}    
+ ?>
     <div class="root">
       <div class="App">
         <div class="typewritter">
@@ -215,32 +259,47 @@
           <div class="card">
             <div class="title">
               <i class="fas fa-rocket"></i>
-              <h4>Digite sua idade</h4>
+              <h4>Sua idade em Mercúrio: </h4>
+              <p>Mercúrio: <?= $$ageMerc ?> </p>
             </div>
-            <form method="post" action="login.php">
-              
-              <input type="text" name="Email" ><br>
-              <br>
-              
-              <input type="submit" value="Acessar" class="title" >
-            </form>
-          </div>
-          
-          
-          
-          
-          <a
-            href="https://github.com/edigar/noobframework"
-            target="_blank"
-            rel="noreferrer"
-            class="card"
-          >
+            <div class="card">
             <div class="title">
-              <i class="fab fa-github"></i>
-              <h4>GitHub</h4>
+              <i class="fas fa-rocket"></i>
+              <h4>Sua idade em Vênus: </h4>
+              <p>Vênus: <?= $$ageVen ?> </p>
             </div>
-            <p>Fork me and contribute on GitHub</p>
-          </a>
+            <div class="card">
+            <div class="title">
+              <i class="fas fa-rocket"></i>
+              <h4>Sua idade em Marte: </h4>
+              <p>Marte: <?= $$ageMar ?> </p>
+            </div>
+            <div class="card">
+            <div class="title">
+              <i class="fas fa-rocket"></i>
+              <h4>Sua idade em Jupiter: </h4>
+              <p>Jupiter: <?= $$ageJup ?> </p>
+            </div>
+            <div class="card">
+            <div class="title">
+              <i class="fas fa-rocket"></i>
+              <h4>Sua idade em Saturno: </h4>
+              <p>Saturno: <?= $$ageSat ?> </p>
+            </div>
+            <div class="card">
+            <div class="title">
+              <i class="fas fa-rocket"></i>
+              <h4>Sua idade em Urano: </h4>
+              <p>Urano: <?= $$ageUra ?> </p>
+            </div>
+            <div class="card">
+            <div class="title">
+              <i class="fas fa-rocket"></i>
+              <h4>Sua idade em Netuno: </h4>
+              <p>Netuno: <?= $$ageNet ?> </p>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
