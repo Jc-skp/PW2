@@ -230,25 +230,7 @@
   } else {
       
 ?>
-<section>
-<h1>Essas são as idades que você teria em cada planeta do Sistema Solar</h1>
-<p>Mercúrio: <?= $age['age'] ?> </p>
-<p>Vênus: <?= $age['age'] ?> </p>
-<p>Terra: <?= $age['age'] ?> </p>
-<p>Marte: <?= $age['age'] ?> </p>
-<p>Júpiter: <?= $age['age'] ?> </p>
-<p>Saturno: <?= $age['age'] ?> </p>
-<p>Urano: <?= $age['age'] ?> </p>
-<p>Netuno: <?= $age['age'] ?> </p>
 
-<hr>
-
-
-<?php 
-
-  break;
-}    
- ?>
     <div class="root">
       <div class="App">
         <div class="typewritter">
@@ -303,5 +285,10 @@
         </div>
       </div>
     </div>
+    <?php 
+
+  break;
+}    
+ ?>
   </body>
 </html>
